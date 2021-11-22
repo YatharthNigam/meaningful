@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+}
+
+.App {
+  height: 100vh;
+  background-color: #243447;
+  color: white;
+}
+
+Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: evenly;
+  height: 100vh;
+}
