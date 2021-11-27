@@ -1,6 +1,6 @@
-* {
+/* * {
   margin: 0;
-}
+} */
 
 .App {
   height: 100vh;
@@ -8,7 +8,7 @@
   color: white;
 }
 
-Container {
+.Container {
   display: flex;
   flex-direction: column;
   justify-content: evenly;

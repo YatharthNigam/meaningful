@@ -12,6 +12,11 @@ const Header = ({ category, setCategory, word, setWord }) => {
     },
   });
 
+  const handleChange = (language) => {
+    setCategory(language);
+    setWord("");
+  };
+
   return (
     <div className="header">
       <span className="title">{word === "" ? "Meaningful" : word}</span>
@@ -28,7 +33,7 @@ const Header = ({ category, setCategory, word, setWord }) => {
             select
             label="Language"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => handleChange(e.target.value)}
             helperText="Please select your language"
           >
             {categories.map((option) => (
