@@ -1,14 +1,14 @@
 import { createTheme, MenuItem, TextField, ThemeProvider } from "@mui/material";
-import { amber } from "@mui/material/colors";
+import { amber, blue } from "@mui/material/colors";
 import React from "react";
 import "./Header.css";
 import categories from "../../data/category";
 
-const Header = ({ category, setCategory, word, setWord }) => {
+const Header = ({ category, setCategory, word, setWord, LightMode }) => {
   const darkTheme = createTheme({
     palette: {
-      mode: "dark",
-      primary: amber,
+      mode: LightMode ? "light" : "dark",
+      primary: LightMode ? blue : amber,
     },
   });
 

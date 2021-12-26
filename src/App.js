@@ -2,7 +2,7 @@ import axios from "axios";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Container } from "@mui/material";
+import { Container, Switch } from "@mui/material";
 import Header from "./components/Header/Header";
 import Definitions from "./components/Definitions/Definitions.jsx";
 
@@ -10,6 +10,7 @@ function App() {
   const [word, setWord] = useState("");
   const [meanings, setMeanings] = useState([]);
   const [category, setCategory] = useState("en");
+  const [LightMode, setLightMode] = useState(false);
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -79,19 +80,37 @@ function App() {
   console.log(meanings);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundColor: LightMode ? "#fff" : "#282c34",
+        color: LightMode ? "black" : "white",
+        transition: "all 0.4s linear",
+      }}
+    >
       <Container maxWidth="md">
+        <div
+          style={{ position: "absolute", top: 0, right: 15, paddingTop: 10 }}
+        >
+          {/* <span>Light Mode</span> */}
+          <MaterialUISwitch
+            checked={LightMode}
+            onChange={() => setLightMode(!LightMode)}
+          />
+        </div>
         <Header
           category={category}
           setCategory={setCategory}
           word={word}
           setWord={setWord}
+          LightMode={LightMode}
         ></Header>
         {meanings && (
           <Definitions
             word={word}
             meanings={meanings}
             category={category}
+            LightMode={LightMode}
           ></Definitions>
         )}
       </Container>

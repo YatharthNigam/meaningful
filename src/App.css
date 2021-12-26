@@ -6,11 +6,12 @@
   height: 100vh;
   background-color: #243447;
   color: white;
+  /* justify-content: space-evenly; */
 }
 
 .Container {
   display: flex;
   flex-direction: column;
-  justify-content: evenly;
+  justify-content: space-evenly;
   height: 100vh;
 }
