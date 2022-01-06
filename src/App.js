@@ -83,7 +83,7 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundColor: LightMode ? "#fff" : "#282c34",
+        backgroundColor: LightMode ? "#efeff4" : "#171a23",
         color: LightMode ? "black" : "white",
         transition: "all 0.4s linear",
       }}

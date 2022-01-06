@@ -32,14 +32,14 @@ const Definitions = ({ word, meanings, category, LightMode }) => {
                 {def.example && (
                   <span>
                     <b>Example :</b>
-                    {def.example}
+                    {def.example},
                   </span>
                 )}
 
                 {def.synonyms && (
                   <span>
                     <b>Synonyms :</b>
-                    {def.synonyms.map((s) => `${s} `)}
+                    {def.synonyms.map((s) => `${s}, `)}.
                   </span>
                 )}
               </div>
